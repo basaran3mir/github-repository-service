@@ -28,7 +28,3 @@ Unauthorized use, redistribution, or commercialization of this code is **not per
 Please use responsibly. Web scraping should always comply with a website’s terms of service.  
 GitHub's robots.txt and API rate limits should be respected at all times.
 
-## 🚫 License
-
-This project is **not open source**.  
-All rights reserved © Emir Can Başaran.
