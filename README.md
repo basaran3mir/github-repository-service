@@ -16,13 +16,6 @@ It uses the **GitHub API** by default and gracefully falls back to **web scrapin
 - `requests`, `beautifulsoup4`, and other standard libraries  
 - GitHub REST API v3  
 
-## 📌 Disclaimer
-
-This project is intended solely for **educational** and **personal portfolio** purposes.  
-It is **not intended for production use** or large-scale scraping of GitHub data.
-
-Unauthorized use, redistribution, or commercialization of this code is **not permitted**.
-
 ## 🛡️ Ethical Note
 
 Please use responsibly. Web scraping should always comply with a website’s terms of service.  
