@@ -24,6 +24,6 @@ class GithubRepoScraper:
                     repositories.append(f"https://github.com{href}")
 
         except Exception as e:
-            print(f"[HATA] Data could not received: {e}")
+            print(f"[ERROR] Data could not received. Reason: {e}")
 
         return repositories

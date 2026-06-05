@@ -1,5 +1,5 @@
-from github_fetcher import GithubRepoFetcher
-from github_scraper import GithubRepoScraper
+from scrapers.github_auto_scraper import GithubRepoFetcher
+from scrapers.github_manuel_scraper import GithubRepoScraper
 
 class GithubRepositoryService:
     def __init__(self, username):

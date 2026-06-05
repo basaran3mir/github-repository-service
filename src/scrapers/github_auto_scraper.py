@@ -8,7 +8,7 @@ class GithubRepoFetcher:
     def get_repositories(self):
         response = requests.get(self.url)
         if response.status_code != 200:
-            print("GitHub API'den veri alınamadı.")
+            print("[ERROR] Failed to retrieve data from GitHub API. Status code:", response.status_code)
             return []
 
         repos = response.json()

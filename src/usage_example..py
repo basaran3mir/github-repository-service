@@ -1,4 +1,4 @@
-from github_repository_service import GithubRepositoryService
+from main_service import GithubRepositoryService
 
 def run(username):
     service = GithubRepositoryService(username)
