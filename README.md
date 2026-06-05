@@ -1,116 +1,116 @@
 ﻿# GitHub Repository Service
 
-A lightweight Python service that fetches public GitHub repositories for a given user. The service attempts to retrieve repository data via the GitHub API first and falls back to HTML scraping if the API response fails.
+A lightweight Python service that retrieves a GitHub user's public repositories using the GitHub REST API, with a web scraping fallback when the API is unavailable.
 
-**Key features**
+## Key features
 
-- API-first repository retrieval using the GitHub REST API.
-- Automatic fallback to HTML scraping when API requests fail.
-- Minimal dependency footprint.
-- Easy to integrate into scripts and automation workflows.
-- Provides repository URLs in a simple list format.
+- API-first repository retrieval via GitHub REST API.
+- HTML scraping fallback for repository listing when the API fails.
+- Simple, reusable service interface for integration into other Python projects.
+- Clean separation between API fetching and scraper implementations.
+- Minimal dependencies and easy setup.
 
 ## Getting Started
 
-These instructions will help you run the service locally and explore the repository fetcher.
+Follow these instructions to set up the project locally and start retrieving GitHub repository lists.
 
 ### Prerequisites
 
 - Python 3.10 or newer
-- Internet access
-- A GitHub username to query
-- A virtual environment is recommended
+- Git (optional, for cloning the repository)
+- A terminal or command prompt
 
 ### Install
 
-1. Clone the repository or download the project files.
-2. Create and activate a Python virtual environment:
+1. Clone the repository or download the source.
 
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
+   ```bash
+   git clone https://github.com/your-org/github-repository-service.git
+   cd github-repository-service
+   ```
 
-3. Install dependencies:
+2. Create and activate a virtual environment.
 
-```powershell
-pip install -r requirements.txt
-```
+   ```bash
+   python -m venv venv
+   # Windows
+   venv\Scripts\activate
+   # macOS / Linux
+   source venv/bin/activate
+   ```
+
+3. Install the required dependencies.
+
+   ```bash
+   python -m pip install --upgrade pip
+   python -m pip install -r requirements.txt
+   ```
 
 ## Usage
 
-Run the example script from the project root:
+Run the example script to fetch repositories for a GitHub username.
 
-```powershell
+```bash
 python src/usage_example..py
 ```
 
-Alternatively, use the service directly in your own script:
+Update the username in `src/usage_example..py` or import `GithubRepositoryService` into your own code:
 
 ```python
-from main_service import GithubRepositoryService
+from src.main_service import GithubRepositoryService
 
-service = GithubRepositoryService("basaran3mir")
-repositories = service.get_repositories()
-for repo in repositories:
+service = GithubRepositoryService("your-github-username")
+repos = service.get_repositories()
+for repo in repos:
     print(repo)
 ```
 
 ## Project Structure
 
-- `src/main_service.py` - Main wrapper service that selects API or scraper retrieval.
-- `src/scrapers/github_auto_scraper.py` - Fetches repository URLs from the GitHub REST API.
-- `src/scrapers/github_manuel_scraper.py` - Parses a user's GitHub profile page with BeautifulSoup as a fallback.
-- `src/usage_example..py` - Example entry-point script showing how to use the service.
-- `requirements.txt` - Python dependency list.
-- `LICENSE` - Project license.
-- `README.md` - Project documentation.
+- `src/main_service.py` � Entry point for the repository service.
+- `src/scrapers/github_auto_scraper.py` � Retrieves repositories via the GitHub API.
+- `src/scrapers/github_manuel_scraper.py` � Scrapes GitHub HTML when the API call fails.
+- `src/usage_example..py` � Example script demonstrating how to use the service.
+- `requirements.txt` � Python package dependencies.
+- `README.md` � Project documentation.
 
 ## Configuration
 
-This project is intentionally simple and does not require a separate configuration file.
+This project has a minimal configuration surface.
 
-- `GithubRepositoryService` is configured by passing a GitHub username.
-- The API endpoint is hard-coded in `src/scrapers/github_auto_scraper.py`.
-- Scraper behavior is defined in `src/scrapers/github_manuel_scraper.py`.
+- `GithubRepoFetcher` builds requests using `https://api.github.com/users/{username}/repos`.
+- `GithubRepoScraper` scrapes the repository page at `https://github.com/{username}?tab=repositories`.
 
-If you want to extend the project, you can add:
-
-- GitHub authentication support (API token)
-- configurable request timeouts
-- user-selectable output formats
-- pagination handling for large repository lists
+If you need custom behavior, extend `GithubRepositoryService` or the scraper/fetcher classes.
 
 ## Development
 
-To contribute or change the code:
+1. Activate the virtual environment.
+2. Install dependencies with `python -m pip install -r requirements.txt`.
+3. Edit the source files in `src/`.
+4. Test your changes by running the example script or importing the service:
 
-1. Activate your virtual environment.
-2. Install the dependencies.
-3. Update code in `src/`.
-4. Run the example or create your own script against `GithubRepositoryService`.
-
-```powershell
+```bash
 python src/usage_example..py
 ```
 
+Optional: add your own unit tests and a test runner for CI integration.
+
 ## Contributing
 
-Contributions are welcome. Please follow these steps:
+Contributions are welcome! To contribute:
 
 1. Fork the repository.
 2. Create a feature branch.
-3. Make your changes.
-4. Submit a pull request with a clear description of the update.
+3. Add or improve functionality.
+4. Open a pull request with a clear description of your changes.
 
-If you find issues or want improvements, open an issue describing the problem or feature request.
+Please follow standard Python coding conventions and keep dependencies minimal.
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is available under the MIT License. See `LICENSE` for details.
 
 ## Contact
 
-For questions or feedback, please reach out via GitHub:
-
-- GitHub: https://github.com/basaran3mir
+For questions or issues, open an issue in the repository or contact the project maintainer.
