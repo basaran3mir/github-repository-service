@@ -113,4 +113,4 @@ This project is available under the MIT License. See `LICENSE` for details.
 
 ## Contact
 
-For questions or issues, open an issue in the repository or contact the project maintainer.
+For questions, feature requests, or bug reports, please open an issue in this repository.
