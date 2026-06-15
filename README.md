@@ -25,7 +25,7 @@ Follow these instructions to set up the project locally and start retrieving Git
 1. Clone the repository or download the source.
 
    ```bash
-   git clone https://github.com/your-org/github-repository-service.git
+   git clone https://github.com/basaran3mir/github-repository-service.git
    cd github-repository-service
    ```
 
