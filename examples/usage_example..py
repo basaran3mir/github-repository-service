@@ -1,7 +1,7 @@
-from main_service import GithubRepositoryService
+from github_repo_service import GithubRepoService
 
 def run(username):
-    service = GithubRepositoryService(username)
+    service = GithubRepoService(username)
     repositories = service.get_repositories()
 
     for repo in repositories:

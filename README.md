@@ -51,15 +51,15 @@ Follow these instructions to set up the project locally and start retrieving Git
 Run the example script to fetch repositories for a GitHub username.
 
 ```bash
-python src/usage_example..py
+python examples/usage_example..py
 ```
 
-Update the username in `src/usage_example..py` or import `GithubRepositoryService` into your own code:
+Update the username in `examples/usage_example..py` or import `GithubRepoService` into your own code:
 
 ```python
-from src.main_service import GithubRepositoryService
+from src.github_repo_service import GithubRepoService
 
-service = GithubRepositoryService("your-github-username")
+service = GithubRepoService("your-github-username")
 repos = service.get_repositories()
 for repo in repos:
     print(repo)
@@ -67,9 +67,9 @@ for repo in repos:
 
 ## Project Structure
 
-- `src/main_service.py` � Entry point for the repository service.
-- `src/scrapers/github_auto_scraper.py` � Retrieves repositories via the GitHub API.
-- `src/scrapers/github_manuel_scraper.py` � Scrapes GitHub HTML when the API call fails.
+- `src/github_repo_service.py` � Entry point for the repository service.
+- `src/github_repo_tools/github_repo_fetcher.py` � Retrieves repositories via the GitHub API.
+- `src/github_repo_tools/github_repo_scraper.py` � Scrapes GitHub HTML when the API call fails.
 - `src/usage_example..py` � Example script demonstrating how to use the service.
 - `requirements.txt` � Python package dependencies.
 - `README.md` � Project documentation.
@@ -81,7 +81,7 @@ This project has a minimal configuration surface.
 - `GithubRepoFetcher` builds requests using `https://api.github.com/users/{username}/repos`.
 - `GithubRepoScraper` scrapes the repository page at `https://github.com/{username}?tab=repositories`.
 
-If you need custom behavior, extend `GithubRepositoryService` or the scraper/fetcher classes.
+If you need custom behavior, extend `GithubRepoService` or the scraper/fetcher classes.
 
 ## Development
 
@@ -91,7 +91,7 @@ If you need custom behavior, extend `GithubRepositoryService` or the scraper/fet
 4. Test your changes by running the example script or importing the service:
 
 ```bash
-python src/usage_example..py
+python examples/usage_example..py
 ```
 
 Optional: add your own unit tests and a test runner for CI integration.

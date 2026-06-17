@@ -1,7 +1,7 @@
-from scrapers.github_auto_scraper import GithubRepoFetcher
-from scrapers.github_manuel_scraper import GithubRepoScraper
+from github_repo_tools.github_repo_fetcher import GithubRepoFetcher
+from github_repo_tools.github_repo_scraper import GithubRepoScraper
 
-class GithubRepositoryService:
+class GithubRepoService:
     def __init__(self, username):
         self.username = username
         self.api_fetcher = GithubRepoFetcher(username)
