@@ -51,10 +51,10 @@ Follow these instructions to set up the project locally and start retrieving Git
 Run the example script to fetch repositories for a GitHub username.
 
 ```bash
-python examples/usage_example..py
+python examples/usage_example.py
 ```
 
-Update the username in `examples/usage_example..py` or import `GithubRepoService` into your own code:
+Update the username in `examples/usage_example.py` or import `GithubRepoService` into your own code:
 
 ```python
 from src.github_repo_service import GithubRepoService
@@ -70,7 +70,7 @@ for repo in repos:
 - `src/github_repo_service.py` � Entry point for the repository service.
 - `src/github_repo_tools/github_repo_fetcher.py` � Retrieves repositories via the GitHub API.
 - `src/github_repo_tools/github_repo_scraper.py` � Scrapes GitHub HTML when the API call fails.
-- `src/usage_example..py` � Example script demonstrating how to use the service.
+- `examples/usage_example.py` � Example script demonstrating how to use the service.
 - `requirements.txt` � Python package dependencies.
 - `README.md` � Project documentation.
 
@@ -91,7 +91,7 @@ If you need custom behavior, extend `GithubRepoService` or the scraper/fetcher c
 4. Test your changes by running the example script or importing the service:
 
 ```bash
-python examples/usage_example..py
+python examples/usage_example.py
 ```
 
 Optional: add your own unit tests and a test runner for CI integration.
