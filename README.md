@@ -114,6 +114,4 @@ This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## Contact
 
-Created by `basaran3mir`.
-
-- GitHub: https://github.com/basaran3mir
+For questions, feature requests, or bug reports, please open an issue in this repository.
